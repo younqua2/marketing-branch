@@ -116,6 +116,126 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(update);
   }
 
+  // --- 240억 카운트업 + 글로우 버스트 애니메이션 ---
+  const finaleAmount = document.querySelector('.finale-solution__amount');
+  if (finaleAmount) {
+    const finaleObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // 스케일 인
+          finaleAmount.classList.add('is-counting');
+
+          // 카운트업: 0 → 240
+          const duration = 2000;
+          const start = performance.now();
+          const targetVal = 240;
+
+          function countUp(now) {
+            const elapsed = now - start;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+            const current = Math.round(targetVal * eased);
+            finaleAmount.textContent = current + '억';
+
+            if (progress < 1) {
+              requestAnimationFrame(countUp);
+            } else {
+              finaleAmount.classList.add('is-counted');
+            }
+          }
+          requestAnimationFrame(countUp);
+
+          finaleObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    finaleObserver.observe(finaleAmount);
+  }
+
+  // --- 핵심 포인트 줌-인 + 글로우 애니메이션 ---
+  const attentionEls = document.querySelectorAll('.attention-zoom');
+  const attentionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-zoomed');
+        attentionObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  attentionEls.forEach(el => attentionObserver.observe(el));
+
+  // --- 문제 제기 질문 라인별 순차 등장 ---
+  const questionEl = document.querySelector('.finale-problem__question');
+  if (questionEl) {
+    const questionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+          questionObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    questionObserver.observe(questionEl);
+  }
+
+  // --- 핵심 수치 강조 펄스 (스크롤 시 한 번) ---
+  const pulseEls = document.querySelectorAll('.pulse-on-view');
+  const pulseObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-pulsed');
+        pulseObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+  pulseEls.forEach(el => pulseObserver.observe(el));
+
+  // --- 영수증 6,000만원 금액 강조 카운트업 ---
+  const receiptAmountEl = document.getElementById('receiptAmount');
+  if (receiptAmountEl) {
+    const numberEl = receiptAmountEl.querySelector('.receipt__amount-number');
+    const circleHighlight = receiptAmountEl.closest('.receipt__circle-highlight');
+    const targetVal = parseInt(numberEl.getAttribute('data-target'));
+
+    const receiptObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // 1단계: 스케일-인 등장
+          receiptAmountEl.classList.add('is-visible');
+
+          // 2단계: 300ms 뒤 카운트업 시작
+          setTimeout(() => {
+            const duration = 1800;
+            const start = performance.now();
+
+            function countUp(now) {
+              const elapsed = now - start;
+              const progress = Math.min(elapsed / duration, 1);
+              // easeOutExpo
+              const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+              const current = Math.round(targetVal * eased);
+              numberEl.textContent = current.toLocaleString();
+
+              if (progress < 1) {
+                requestAnimationFrame(countUp);
+              } else {
+                // 3단계: 카운트 완료 → shimmer + 박스 글로우 활성화
+                receiptAmountEl.classList.add('is-counted');
+                if (circleHighlight) circleHighlight.classList.add('is-counted');
+              }
+            }
+
+            requestAnimationFrame(countUp);
+          }, 300);
+
+          receiptObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+
+    receiptObserver.observe(receiptAmountEl);
+  }
+
   // --- 네비게이션 스크롤 효과 ---
   const nav = document.getElementById('nav');
   const stickyCta = document.getElementById('stickyCta');
@@ -213,6 +333,58 @@ document.addEventListener('DOMContentLoaded', () => {
       card.style.setProperty('--mouse-y', `${y}px`);
     });
   });
+
+  // --- 헥사곤 연결선 좌표 계산 ---
+  const hexGrid = document.querySelector('.hex-grid');
+  const hexLines = document.querySelectorAll('.hex-line');
+  const hexCells = document.querySelectorAll('.hex-cell[data-hex]');
+
+  function updateHexLines() {
+    if (!hexGrid || hexCells.length === 0 || hexLines.length === 0) return;
+    const gridRect = hexGrid.getBoundingClientRect();
+
+    // 각 셀의 중심 좌표 계산 (grid 기준 상대좌표)
+    const centers = [];
+    hexCells.forEach(cell => {
+      const shape = cell.querySelector('.hex-cell__shape');
+      const r = shape.getBoundingClientRect();
+      centers.push({
+        x: r.left + r.width / 2 - gridRect.left,
+        y: r.top + r.height / 2 - gridRect.top
+      });
+    });
+
+    // SVG viewBox 설정
+    const svg = hexGrid.querySelector('.hex-grid__lines');
+    svg.setAttribute('viewBox', `0 0 ${gridRect.width} ${gridRect.height}`);
+
+    // 각 라인의 좌표 설정 — 헥사곤 가장자리까지만 (중심 통과 X)
+    hexLines.forEach(line => {
+      const from = parseInt(line.getAttribute('data-from'));
+      const to = parseInt(line.getAttribute('data-to'));
+      if (centers[from] && centers[to]) {
+        const dx = centers[to].x - centers[from].x;
+        const dy = centers[to].y - centers[from].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist === 0) return;
+
+        // 헥사곤 반지름 (셀 너비의 약 50%)
+        const hexRadius = 80;
+        const ux = dx / dist;
+        const uy = dy / dist;
+
+        // 양 끝을 헥사곤 가장자리로 이동
+        line.setAttribute('x1', centers[from].x + ux * hexRadius);
+        line.setAttribute('y1', centers[from].y + uy * hexRadius);
+        line.setAttribute('x2', centers[to].x - ux * hexRadius);
+        line.setAttribute('y2', centers[to].y - uy * hexRadius);
+      }
+    });
+  }
+
+  // 초기 + 리사이즈 시 재계산
+  setTimeout(updateHexLines, 300);
+  window.addEventListener('resize', updateHexLines);
 
   // ============================================
   // ============================================
@@ -334,10 +506,11 @@ document.addEventListener('DOMContentLoaded', () => {
         let dotAlpha = 0.15 + alignT * 0.25;
         let dotColor = `rgba(150, 170, 220, ${dotAlpha})`;
 
-        if (p2 > 0 && p3 === 0) {
-          // Phase 2: 빛 흐름 — 좌→우 물결
+        if (p2 > 0) {
+          // Phase 2: 빛 흐름 — 좌→우 물결 (Phase3 시작 시 부드럽게 페이드아웃)
+          const p2Fade = p3 > 0 ? Math.max(0, 1 - p3 * 3) : 1;
           const wave = Math.sin((x * 8 - p2 * 6) * Math.PI);
-          const glow = Math.max(0, wave);
+          const glow = Math.max(0, wave) * p2Fade;
           const blueR = 90 + glow * 165;
           const blueG = 124 + glow * 16;
           const blueB = 255 - glow * 180;
@@ -368,10 +541,11 @@ document.addEventListener('DOMContentLoaded', () => {
           let lineColor = `rgba(90, 124, 255, ${0.06 * lineAlpha})`;
 
           // Phase 2: 빛이 선을 타고 흐르는 효과
-          if (p2 > 0 && p3 === 0) {
+          if (p2 > 0) {
+            const p2Fade = p3 > 0 ? Math.max(0, 1 - p3 * 3) : 1;
             const midX = (dots[conn.a].gx + dots[conn.b].gx) / 2;
             const wave = Math.sin((midX * 8 - p2 * 6) * Math.PI);
-            const glow = Math.max(0, wave);
+            const glow = Math.max(0, wave) * p2Fade;
             const r = 90 + glow * 165;
             const g = 124 + glow * 16;
             const bb = 255 - glow * 180;
@@ -389,12 +563,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // ── Phase 3: 성장 그래프 솟구침 ──
       if (p3 > 0) {
-        const graphY = H; // 그래프 바닥 = 캔버스 맨 아래
+        const graphY = H * 0.92; // 그래프 바닥 = 캔버스 하단에서 약간 위
         const barWidth = W * 0.06;
         const growT = easeOutExpo(Math.min(p3 * 1.5, 1));
+        // Phase 3 진입 시 서서히 나타남 (0~0.3초 동안 페이드인)
+        const graphFadeIn = Math.min(p3 * 5, 1);
         // 후반부 페이드아웃 (p3 > 0.8 이후 사라짐)
         const graphFade = p3 > 0.8 ? 1 - (p3 - 0.8) / 0.2 : 1;
-        ctx.globalAlpha = graphFade;
+        ctx.globalAlpha = graphFadeIn * graphFade;
 
         for (let i = 0; i < bars.length; i++) {
           const bar = bars[i];

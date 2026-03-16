@@ -148,7 +148,7 @@
     <div class="container scrolly-gnosis">
       <!-- 타이틀 오버레이 -->
       <div class="overview__title-wrap">
-        <h2 class="overview__title reveal">시작부터 수익까지,<br><strong>다 갖춰져 있습니다</strong></h2>
+        <h2 class="overview__title reveal">마케팅 창업의 시작부터 매출까지,<br><strong>모든게 다 갖춰져 있습니다</strong></h2>
       </div>
       <!-- 좌측: Sticky 이미지 영역 (이미지만 고정) -->
       <div class="scrolly-gnosis__left">
@@ -386,8 +386,11 @@
         <!-- 좌측: 텍스트 -->
         <div class="netmap-text">
           <h2 class="netmap-text__title reveal">
-            전국을 연결하는<br>지사 네트워크
+            연 240억 성공 시스템,<br><strong>이제 전국으로 확대합니다</strong>
           </h2>
+          <p class="netmap-text__subtitle reveal">
+            마르지 않는 소상공인 시장, 업계 1위의 인프라와 함께 선점하십시오.
+          </p>
 
           <div class="netmap-item reveal">
             <div class="netmap-item__icon">🌊</div>
@@ -401,14 +404,14 @@
             <div class="netmap-item__icon">🏢</div>
             <div class="netmap-item__body">
               <h4 class="netmap-item__heading">본사 인프라</h4>
-              <p><strong>300평 사무실</strong>, 체계적인 영업 및 운영 시스템 구축, 현재 <strong>연 240억 이상</strong>의 매출을 기록하고 있습니다.</p>
+              <p><span class="netmap-highlight">300평 사무실</span>, 체계적인 영업 및 운영 시스템 구축, 현재 <span class="netmap-highlight">연 240억 이상</span>의 매출을 기록하고 있습니다.</p>
             </div>
           </div>
 
           <div class="netmap-item reveal">
-            <div class="netmap-item__icon">🚀</div>
+            <div class="netmap-item__icon">🎯</div>
             <div class="netmap-item__body">
-              <h4 class="netmap-item__heading">목표</h4>
+              <h4 class="netmap-item__heading">전략적 확장</h4>
               <p>이번 <strong>지사 네트워크 확장</strong>을 통해 해당 시장을 보다 빠르게 확대하고자 합니다.</p>
             </div>
           </div>
@@ -417,37 +420,52 @@
         <!-- 우측: 네트워크 비주얼 -->
         <div class="netmap-visual reveal">
           <div class="netmap-canvas">
-            <!-- 본사 (서울 기준) -->
-            <div class="netmap-node netmap-node--hq" style="top:25%;left:35%">
+            <!-- 배경 워터마크: 우상향 성장 곡선 -->
+            <svg class="netmap-watermark" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20,360 Q100,340 160,280 T280,160 T380,40" stroke="rgba(255,83,22,0.04)" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <path d="M20,380 Q120,360 180,300 T300,180 T380,60" stroke="rgba(255,83,22,0.03)" stroke-width="2" fill="none" stroke-linecap="round"/>
+            </svg>
+
+            <!-- 본사 (서울) — 극대화 -->
+            <div class="netmap-node netmap-node--hq" style="top:28%;left:38%">
               <div class="netmap-node__pulse"></div>
               <div class="netmap-node__pulse netmap-node__pulse--2"></div>
+              <div class="netmap-node__pulse netmap-node__pulse--3"></div>
+              <div class="netmap-node__core"></div>
               <span class="netmap-node__label">본사(서울)</span>
+              <!-- 데이터 뱃지 -->
+              <div class="netmap-badge netmap-badge--left">
+                <span>🏢 300평 규모 인프라</span>
+              </div>
+              <div class="netmap-badge netmap-badge--right">
+                <span>💰 연 매출 240억</span>
+              </div>
             </div>
-            <!-- 지사 노드들 (대한민국 주요 도시 위치 반영) -->
-            <div class="netmap-node netmap-node--branch" style="top:28%;left:22%"><span>인천</span></div>
-            <div class="netmap-node netmap-node--branch" style="top:18%;left:65%"><span>강원</span></div>
-            <div class="netmap-node netmap-node--branch" style="top:48%;left:42%"><span>대전</span></div>
-            <div class="netmap-node netmap-node--branch" style="top:62%;left:68%"><span>대구</span></div>
-            <div class="netmap-node netmap-node--branch" style="top:76%;left:78%"><span>부산</span></div>
-            <div class="netmap-node netmap-node--branch" style="top:72%;left:28%"><span>광주</span></div>
-            <div class="netmap-node netmap-node--branch" style="top:95%;left:22%"><span>제주</span></div>
 
-            <!-- SVG 연결선 (x: left*4, y: top*4) 본사 중심점(140, 100) 기준 -->
+            <!-- 지사 노드들 -->
+            <div class="netmap-node netmap-node--branch" style="top:30%;left:18%"><span>인천</span></div>
+            <div class="netmap-node netmap-node--branch" style="top:14%;left:68%"><span>강원</span></div>
+            <div class="netmap-node netmap-node--branch" style="top:50%;left:48%"><span>대전</span></div>
+            <div class="netmap-node netmap-node--branch" style="top:64%;left:72%"><span>대구</span></div>
+            <div class="netmap-node netmap-node--branch" style="top:78%;left:82%"><span>부산</span></div>
+            <div class="netmap-node netmap-node--branch" style="top:74%;left:26%"><span>광주</span></div>
+            <div class="netmap-node netmap-node--branch" style="top:94%;left:20%"><span>제주</span></div>
+
+            <!-- SVG 연결선 (오렌지 그래디언트 + 애니메이션) -->
             <svg class="netmap-lines" viewBox="0 0 400 400" preserveAspectRatio="none">
-              <!-- 인천 -->
-              <line x1="140" y1="100" x2="88" y2="112" class="netmap-line" />
-              <!-- 강원 -->
-              <line x1="140" y1="100" x2="260" y2="72" class="netmap-line" />
-              <!-- 대전 -->
-              <line x1="140" y1="100" x2="168" y2="192" class="netmap-line" />
-              <!-- 대구 -->
-              <line x1="140" y1="100" x2="272" y2="248" class="netmap-line" />
-              <!-- 부산 -->
-              <line x1="140" y1="100" x2="312" y2="304" class="netmap-line" />
-              <!-- 광주 -->
-              <line x1="140" y1="100" x2="112" y2="288" class="netmap-line" />
-              <!-- 제주 -->
-              <line x1="140" y1="100" x2="88" y2="380" class="netmap-line" />
+              <defs>
+                <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="rgba(255,140,74,0.5)"/>
+                  <stop offset="100%" stop-color="rgba(255,83,22,0.1)"/>
+                </linearGradient>
+              </defs>
+              <!-- 인천 -->  <line x1="152" y1="112" x2="72" y2="120" class="netmap-line" />
+              <!-- 강원 -->  <line x1="152" y1="112" x2="272" y2="56" class="netmap-line" />
+              <!-- 대전 -->  <line x1="152" y1="112" x2="192" y2="200" class="netmap-line" />
+              <!-- 대구 -->  <line x1="152" y1="112" x2="288" y2="256" class="netmap-line" />
+              <!-- 부산 -->  <line x1="152" y1="112" x2="328" y2="312" class="netmap-line" />
+              <!-- 광주 -->  <line x1="152" y1="112" x2="104" y2="296" class="netmap-line" />
+              <!-- 제주 -->  <line x1="152" y1="112" x2="80" y2="376" class="netmap-line" />
             </svg>
           </div>
         </div>
@@ -461,7 +479,7 @@
       <!-- 타이틀 영역 -->
       <div class="dashboard-section__header reveal">
         <p class="dashboard-section__label">💰 매출 구조</p>
-        <h2 class="dashboard-section__title">
+        <h2 class="dashboard-section__title attention-zoom">
           한 명이 만드는 수익,<br><strong>이 정도입니다</strong>
         </h2>
         <p class="dashboard-section__desc">TM 영업 한 통화가 만들어내는 수익 구조를 확인하세요</p>
@@ -485,38 +503,70 @@
         </div>
       </div>
 
-      <!-- 3대 지표 위젯 -->
-      <div class="dash-widgets reveal">
-        <!-- 위젯 1: 1인 월 매출 -->
-        <div class="dash-widget">
-          <div class="dash-widget__label">1인 월 평균 매출</div>
-          <div class="dash-widget__value">1,600<span class="dash-widget__unit">만원</span></div>
-          <div class="dash-widget__sub">1인당 월 평균 매출 가능</div>
-          <span class="dash-widget__badge">✓ 증빙 가능</span>
+      <!-- ===== 통합 데이터 패널 ===== -->
+      <div class="dash-panel reveal">
+
+        <!-- 섹션 1: 소수 정예의 파괴력 -->
+        <div class="dash-panel__section">
+          <!-- 워터마크: 상승 꺾은선 그래프 -->
+          <svg class="dash-panel__watermark" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="10,100 50,75 90,80 130,40 170,15 190,20" stroke="rgba(255,83,22,0.08)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="170" cy="15" r="6" fill="rgba(255,83,22,0.06)"/>
+          </svg>
+          <p class="dash-panel__eyebrow">소수 정예의 파괴력</p>
+          <p class="dash-panel__label">1인당 월 평균 매출</p>
+          <div class="dash-panel__value">1,600<span class="dash-panel__unit">만원</span></div>
+          <p class="dash-panel__sub">소수 인원으로도 압도적 효율</p>
+          <span class="dash-panel__badge">✓ 증빙 가능</span>
         </div>
 
-        <!-- 위젯 2: 5인 팀 수익 (강조) -->
-        <div class="dash-widget dash-widget--accent">
-          <div class="dash-widget__popular">BEST</div>
-          <div class="dash-widget__label">5인 팀 구성 시 월 수익</div>
-          <div class="dash-widget__value">2,000<span class="dash-widget__unit">만원+</span></div>
-          <div class="dash-widget__sub">총괄 포함 5인 구성 기준</div>
-          <div class="dash-widget__team">
-            <span class="dash-widget__person dash-widget__person--lead">👤</span>
-            <span class="dash-widget__person">👤</span>
-            <span class="dash-widget__person">👤</span>
-            <span class="dash-widget__person">👤</span>
-            <span class="dash-widget__person">👤</span>
+        <!-- 세로 디바이더 -->
+        <div class="dash-panel__divider"></div>
+
+        <!-- 섹션 2: 팀 시너지의 결과 -->
+        <div class="dash-panel__section dash-panel__section--center">
+          <p class="dash-panel__eyebrow">팀 시너지의 결과</p>
+          <p class="dash-panel__label">총괄 포함 5인 구성 시</p>
+          <div class="dash-panel__value">2,000<span class="dash-panel__unit">만원+</span></div>
+          <p class="dash-panel__sub">월 수익</p>
+          <div class="dash-panel__team">
+            <span class="dash-panel__person dash-panel__person--lead">👤</span>
+            <span class="dash-panel__person">👤</span>
+            <span class="dash-panel__person">👤</span>
+            <span class="dash-panel__person">👤</span>
+            <span class="dash-panel__person">👤</span>
           </div>
         </div>
 
-        <!-- 위젯 3: 영업이익률 -->
-        <div class="dash-widget">
-          <div class="dash-widget__label">영업이익률</div>
-          <div class="dash-widget__value">60<span class="dash-widget__unit">%+</span></div>
-          <div class="dash-widget__sub">객단가 200만원 기준</div>
-          <span class="dash-widget__note">사원 인센티브 포함 / 고정비 제외 기준</span>
+        <!-- 세로 디바이더 -->
+        <div class="dash-panel__divider"></div>
+
+        <!-- 섹션 3: 수익성의 핵심 -->
+        <div class="dash-panel__section">
+          <p class="dash-panel__eyebrow">수익성의 핵심</p>
+          <p class="dash-panel__label">객단가 200만원 기준</p>
+          <!-- 도넛 차트 감싸기 -->
+          <div class="dash-panel__donut-wrap">
+            <svg class="dash-panel__donut" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="10"/>
+              <circle class="dash-panel__donut-fill" cx="60" cy="60" r="52" fill="none" stroke="url(#donutGrad)" stroke-width="10" stroke-linecap="round"
+                stroke-dasharray="326.73" stroke-dashoffset="130.69"
+                transform="rotate(-90 60 60)"/>
+              <defs>
+                <linearGradient id="donutGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#ffb74d"/>
+                  <stop offset="100%" stop-color="#ff5316"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <div class="dash-panel__donut-text">
+              <span class="dash-panel__value dash-panel__value--donut">60<span class="dash-panel__unit">%+</span></span>
+            </div>
+          </div>
+          <p class="dash-panel__sub dash-panel__sub--label">영업이익률</p>
+          <span class="dash-panel__note">사원 인센티브 포함 / 고정비 제외 기준</span>
         </div>
+
       </div>
 
       <!-- 하단 강조 메시지 -->
@@ -531,7 +581,7 @@
   <section class="section sales-dark" id="sales">
     <div class="container">
       <p class="sales-dark__label reveal">🤔 가장 많은 질문</p>
-      <h2 class="sales-dark__title reveal">
+      <h2 class="sales-dark__title reveal attention-zoom">
         영업이 어려운 것<br><strong>아닌가요?</strong>
       </h2>
       <p class="sales-dark__sub reveal">
@@ -618,7 +668,7 @@
   <!-- ========== 섹션 4: 수익률 비교 (영수증 메타포) ========== -->
   <section class="section receipt-section" id="revenue">
     <div class="container">
-      <h2 class="receipt-section__title reveal">
+      <h2 class="receipt-section__title reveal attention-zoom">
         동일 매출, <strong>완전히 다른 수익 구조</strong>
       </h2>
       <p class="receipt-section__subtitle reveal">월 매출 1억 기준</p>
@@ -692,7 +742,12 @@
           <div class="receipt__total receipt__total--high">
             <div class="receipt__circle-highlight">
               <span>최종 영업이익</span>
-              <span>약 6,000만원</span>
+              <span class="receipt__amount-hero" id="receiptAmount">
+                <span class="receipt__amount-prefix">약</span>
+                <span class="receipt__amount-number" data-target="6000">0</span>
+                <span class="receipt__amount-unit">만원</span>
+                <span class="receipt__amount-shimmer"></span>
+              </span>
             </div>
           </div>
           <ul class="receipt__notes receipt__notes--positive">
@@ -854,97 +909,115 @@
     <div class="container">
       <div class="edu-combo__header reveal">
         <p class="edu-combo__label">🎓 교육 시스템</p>
-        <h2 class="edu-combo__title">
+        <h2 class="edu-combo__title attention-zoom">
           본사의 <strong>검증된 교육</strong>으로<br>확실한 성과를 보장합니다
         </h2>
       </div>
 
       <div class="edu-combo reveal">
-        <!-- 좌측: 교육 성과 보장 -->
-        <div class="edu-combo__left">
-          <!-- 기하학적 메달 엠블럼 -->
-          <div class="edu-combo__medal">
-            <div class="edu-combo__medal-outer">
-              <div class="edu-combo__medal-inner">
-                <svg class="edu-combo__medal-hex" viewBox="0 0 100 100" width="96" height="96">
-                  <polygon points="50,2 93,25 93,75 50,98 7,75 7,25" fill="none" stroke="url(#medalGrad)" stroke-width="2.5"/>
-                  <polygon points="50,12 83,30 83,70 50,88 17,70 17,30" fill="none" stroke="rgba(212,160,23,0.2)" stroke-width="1"/>
-                  <defs><linearGradient id="medalGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#d4a017"/><stop offset="100%" stop-color="#f5d98e"/></linearGradient></defs>
-                </svg>
-                <div class="edu-combo__medal-content">
-                  <span class="edu-combo__medal-pct">100%</span>
-                  <span class="edu-combo__medal-txt">환불 보장</span>
-                </div>
-              </div>
-            </div>
+        <!-- ===== 좌측: 커리큘럼 (먼저 교육 내용을 보여줌) ===== -->
+        <div class="edu-combo__left edu-curric">
+          <!-- 헤더 -->
+          <div class="edu-curric__header">
+            <span class="edu-curric__badge">⭐ CONFIDENTIAL</span>
           </div>
 
-          <h3 class="edu-combo__card-title">교육 성과 보장</h3>
-          <p class="edu-combo__lead">
-            영업 교육 이후 진행되는<br>
-            <strong>실전 영업 테스트 기간 동안</strong>
-          </p>
-          <div class="edu-combo__highlight">
-            <span class="edu-combo__highlight-label">1인 기준 월</span>
-            <span class="edu-combo__amount">1,600만원</span>
-            <span class="edu-combo__highlight-label">매출 미달 시</span>
-          </div>
-          <h4 class="edu-combo__refund">가맹비 전액 환불</h4>
-          <p class="edu-combo__note">본사의 <strong>책임 있는 보장</strong>입니다.</p>
-        </div>
+          <h3 class="edu-curric__title">핵심 교육 내용</h3>
 
-        <!-- 우측: 교육 내용 -->
-        <div class="edu-combo__right">
-          <!-- 정교한 봉인 배지 -->
-          <div class="edu-combo__seal-badge">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="rgba(212,160,23,0.8)"/>
-            </svg>
-            <span>CONFIDENTIAL</span>
-          </div>
-          <h3 class="edu-combo__card-title">핵심 교육 내용</h3>
-
-          <div class="edu-combo__item">
-            <span class="edu-combo__check-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="#d4a017" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
+          <div class="edu-curric__item">
+            <span class="edu-curric__num">01</span>
             <div>
               <h4>1차 도입콜 전략 / 스크립트</h4>
               <p>매출을 만들어낸 실전 상담 스크립트 기반</p>
             </div>
           </div>
 
-          <div class="edu-combo__item">
-            <span class="edu-combo__check-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="#d4a017" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
+          <div class="edu-curric__item">
+            <span class="edu-curric__num">02</span>
             <div>
               <h4>광고주 가망 전환 관리 방법</h4>
               <p>가망 광고주 관리 및 상담 전환율 극대화</p>
             </div>
           </div>
 
-          <div class="edu-combo__item">
-            <span class="edu-combo__check-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="#d4a017" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
+          <div class="edu-curric__item">
+            <span class="edu-curric__num">03</span>
             <div>
               <h4>후킹 및 계약 클로징 전략</h4>
               <p>관심에서 계약까지 이끄는 핵심 전략</p>
             </div>
           </div>
 
-          <div class="edu-combo__item">
-            <span class="edu-combo__check-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="#d4a017" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
+          <div class="edu-curric__item">
+            <span class="edu-curric__num">04</span>
             <div>
               <h4>미팅 전환 및 영업 전략</h4>
               <p>대면 미팅으로의 자연스러운 전환 기법</p>
             </div>
           </div>
 
-          <p class="edu-combo__footer-note">단순한 이론이 아닌 <strong>실전 영업 교육</strong>입니다.</p>
+          <div class="edu-curric__highlight-box">
+            <p>단순한 이론이 아닌 <strong class="edu-curric__marker">실전 영업 교육</strong>입니다.</p>
+          </div>
+        </div>
+
+        <!-- ===== 브릿지 (커리큘럼 → 보증서 방향) ===== -->
+        <div class="edu-combo__bridge">
+          <div class="edu-combo__bridge-line"></div>
+          <span class="edu-combo__bridge-text">이 교육이 있기에<br>가능한 약속</span>
+          <div class="edu-combo__bridge-arrow">→</div>
+        </div>
+
+        <!-- ===== 우측: 공식 환불 보증서 ===== -->
+        <div class="edu-combo__right edu-cert">
+          <div class="edu-cert__border">
+            <!-- 인증 마크 -->
+            <div class="edu-cert__seal">
+              <div class="edu-cert__mark">
+                <svg viewBox="0 0 80 90" width="72" height="81" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="sealGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#f5d98e"/>
+                      <stop offset="50%" stop-color="#d4a017"/>
+                      <stop offset="100%" stop-color="#f5d98e"/>
+                    </linearGradient>
+                  </defs>
+                  <!-- 방패 shape -->
+                  <path d="M40 4 L72 18 L72 46 Q72 68 40 86 Q8 68 8 46 L8 18 Z" 
+                        fill="url(#sealGold)" opacity="0.12" stroke="url(#sealGold)" stroke-width="1.5"/>
+                  <path d="M40 10 L66 22 L66 44 Q66 63 40 78 Q14 63 14 44 L14 22 Z" 
+                        fill="none" stroke="url(#sealGold)" stroke-width="0.8" opacity="0.35"/>
+                  <!-- 체크마크 -->
+                  <polyline points="28,44 36,54 54,34" fill="none" stroke="#8b6914" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+                </svg>
+                <span class="edu-cert__mark-label">100% 환불 보장</span>
+              </div>
+            </div>
+
+            <h3 class="edu-cert__title">교육 성과 보장</h3>
+            <p class="edu-cert__lead">
+              영업 교육 이후 진행되는<br>
+              <strong>실전 영업 테스트 기간 동안</strong>
+            </p>
+            <div class="edu-cert__highlight">
+              <span class="edu-cert__hl-label">1인 기준 월</span>
+              <span class="edu-cert__amount">1,600만원</span>
+              <span class="edu-cert__hl-label">매출 미달 시</span>
+            </div>
+            <h4 class="edu-cert__refund">가맹비 전액 환불</h4>
+
+            <div class="edu-cert__stamp-area">
+              <p class="edu-cert__note">본사의 <strong>책임 있는 보장</strong>입니다.</p>
+              <div class="edu-cert__stamp">
+                <svg viewBox="0 0 64 64" width="44" height="44" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="32" cy="32" r="28" fill="none" stroke="#c0392b" stroke-width="3" opacity="0.6"/>
+                  <circle cx="32" cy="32" r="22" fill="none" stroke="#c0392b" stroke-width="1.5" opacity="0.3"/>
+                  <text x="32" y="30" text-anchor="middle" fill="#c0392b" font-size="9" font-weight="900" opacity="0.6">확인</text>
+                  <text x="32" y="42" text-anchor="middle" fill="#c0392b" font-size="5.5" font-weight="600" opacity="0.4">APPROVED</text>
+                </svg>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -953,15 +1026,15 @@
   <!-- ========== 섹션 10: 지사 운영 사례 (프리미엄 IR 테이블) ========== -->
   <section class="section case-tbl-section" id="cases">
     <div class="container">
-      <h2 class="case-tbl__title reveal">실제 지사 <strong>운영 성과</strong></h2>
+      <h2 class="case-tbl__title reveal attention-zoom">실제 지사 <strong>운영 성과</strong></h2>
       <p class="case-tbl__sub reveal">교육 이후 단 2~3개월 만에 억대 매출로 성장 📈</p>
 
       <!-- ── A 지사 ── -->
       <div class="case-tbl__card reveal">
         <!-- 워터마크 성장 곡선 -->
         <svg class="case-tbl__watermark" viewBox="0 0 600 120" preserveAspectRatio="none">
-          <path d="M0 100 Q150 90 250 60 Q400 15 600 5" fill="none" stroke="rgba(90,140,255,0.08)" stroke-width="2.5"/>
-          <path d="M0 100 Q150 90 250 60 Q400 15 600 5 L600 120 L0 120Z" fill="rgba(90,140,255,0.03)"/>
+          <path d="M0 100 Q150 90 250 60 Q400 15 600 5" fill="none" stroke="rgba(90,140,255,0.08)" stroke-width="2.5" />
+          <path d="M0 100 Q150 90 250 60 Q400 15 600 5 L600 120 L0 120Z" fill="rgba(90,140,255,0.03)" />
         </svg>
         <div class="case-tbl__card-head">
           <div class="case-tbl__badge case-tbl__badge--a">A 지사</div>
@@ -992,7 +1065,9 @@
               <td><strong class="case-tbl__num case-tbl__num--accent">5,000만원</strong></td>
               <td>
                 <strong class="case-tbl__num case-tbl__num--peak">8,000만 ~ 1억</strong>
-                <div class="case-tbl__bar"><div class="case-tbl__bar-fill case-tbl__bar-fill--a" style="width:83%"></div></div>
+                <div class="case-tbl__bar">
+                  <div class="case-tbl__bar-fill case-tbl__bar-fill--a" style="width:83%"></div>
+                </div>
               </td>
             </tr>
           </tbody>
@@ -1002,8 +1077,8 @@
       <!-- ── B 지사 ── -->
       <div class="case-tbl__card reveal">
         <svg class="case-tbl__watermark" viewBox="0 0 600 120" preserveAspectRatio="none">
-          <path d="M0 100 Q120 85 240 50 Q420 8 600 2" fill="none" stroke="rgba(255,140,74,0.08)" stroke-width="2.5"/>
-          <path d="M0 100 Q120 85 240 50 Q420 8 600 2 L600 120 L0 120Z" fill="rgba(255,140,74,0.03)"/>
+          <path d="M0 100 Q120 85 240 50 Q420 8 600 2" fill="none" stroke="rgba(255,140,74,0.08)" stroke-width="2.5" />
+          <path d="M0 100 Q120 85 240 50 Q420 8 600 2 L600 120 L0 120Z" fill="rgba(255,140,74,0.03)" />
         </svg>
         <div class="case-tbl__card-head">
           <div class="case-tbl__badge case-tbl__badge--b">B 지사</div>
@@ -1034,7 +1109,9 @@
               <td><strong class="case-tbl__num case-tbl__num--accent">9,000만원</strong></td>
               <td>
                 <strong class="case-tbl__num case-tbl__num--peak">9,000만 ~ 1.2억</strong>
-                <div class="case-tbl__bar"><div class="case-tbl__bar-fill case-tbl__bar-fill--b" style="width:100%"></div></div>
+                <div class="case-tbl__bar">
+                  <div class="case-tbl__bar-fill case-tbl__bar-fill--b" style="width:100%"></div>
+                </div>
               </td>
             </tr>
           </tbody>
@@ -1055,9 +1132,27 @@
       <p class="hex-section__sub reveal">7가지 핵심 지원이 빈틈없이 맞물려 돌아갑니다</p>
 
       <div class="hex-grid reveal">
+        <!-- SVG 연결선 레이어 -->
+        <svg class="hex-grid__lines" aria-hidden="true" preserveAspectRatio="none">
+          <!-- 상단 행 내부 연결 (1-2, 2-3, 3-4) -->
+          <line class="hex-line" data-from="0" data-to="1"/>
+          <line class="hex-line" data-from="1" data-to="2"/>
+          <line class="hex-line" data-from="2" data-to="3"/>
+          <!-- 하단 행 내부 연결 (5-6, 6-7) -->
+          <line class="hex-line" data-from="4" data-to="5"/>
+          <line class="hex-line" data-from="5" data-to="6"/>
+          <!-- 상단 → 하단 대각선 연결 -->
+          <line class="hex-line" data-from="0" data-to="4"/>
+          <line class="hex-line" data-from="1" data-to="4"/>
+          <line class="hex-line" data-from="1" data-to="5"/>
+          <line class="hex-line" data-from="2" data-to="5"/>
+          <line class="hex-line" data-from="2" data-to="6"/>
+          <line class="hex-line" data-from="3" data-to="6"/>
+        </svg>
+
         <!-- 4개 상단 줄 -->
         <div class="hex-row hex-row--top">
-          <div class="hex-cell">
+          <div class="hex-cell" data-hex="0">
             <div class="hex-cell__shape">
               <div class="hex-cell__content">
                 <span class="hex-cell__icon">🎓</span>
@@ -1065,7 +1160,7 @@
               </div>
             </div>
           </div>
-          <div class="hex-cell">
+          <div class="hex-cell" data-hex="1">
             <div class="hex-cell__shape">
               <div class="hex-cell__content">
                 <span class="hex-cell__icon">🎯</span>
@@ -1073,7 +1168,7 @@
               </div>
             </div>
           </div>
-          <div class="hex-cell">
+          <div class="hex-cell" data-hex="2">
             <div class="hex-cell__shape">
               <div class="hex-cell__content">
                 <span class="hex-cell__icon">📱</span>
@@ -1081,7 +1176,7 @@
               </div>
             </div>
           </div>
-          <div class="hex-cell">
+          <div class="hex-cell" data-hex="3">
             <div class="hex-cell__shape">
               <div class="hex-cell__content">
                 <span class="hex-cell__icon">📍</span>
@@ -1093,7 +1188,7 @@
 
         <!-- 3개 하단 줄 (오프셋) -->
         <div class="hex-row hex-row--bottom">
-          <div class="hex-cell">
+          <div class="hex-cell" data-hex="4">
             <div class="hex-cell__shape">
               <div class="hex-cell__content">
                 <span class="hex-cell__icon">🌐</span>
@@ -1101,7 +1196,7 @@
               </div>
             </div>
           </div>
-          <div class="hex-cell">
+          <div class="hex-cell" data-hex="5">
             <div class="hex-cell__shape">
               <div class="hex-cell__content">
                 <span class="hex-cell__icon">🔍</span>
@@ -1109,7 +1204,7 @@
               </div>
             </div>
           </div>
-          <div class="hex-cell">
+          <div class="hex-cell" data-hex="6">
             <div class="hex-cell__shape">
               <div class="hex-cell__content">
                 <span class="hex-cell__icon">💳</span>
@@ -1125,7 +1220,7 @@
   <!-- ========== 섹션 11b: 추천 대상 ========== -->
   <section class="section persona-section" id="target">
     <div class="container">
-      <h2 class="persona-section__title reveal">이런 분들에게 <strong>추천합니다</strong></h2>
+      <h2 class="persona-section__title reveal attention-zoom">이런 분들에게 <strong>추천합니다</strong></h2>
       <p class="persona-section__sub reveal">아래 항목 중 하나라도 해당된다면, 이 기회는 당신을 위한 것입니다</p>
 
       <div class="persona-row reveal">
@@ -1182,36 +1277,61 @@
 
   <!-- ========== 섹션 12: 마무리 — Problem & Solution + CTA ========== -->
 
-  <!-- Problem Zone -->
+  <!-- Problem Zone — 문제 제기와 공감 -->
   <section class="section finale-problem" id="contact">
     <div class="finale-problem__pattern"></div>
+    <!-- 거대 큰따옴표 배경 -->
+    <div class="finale-problem__quote finale-problem__quote--open" aria-hidden="true">"</div>
+    <div class="finale-problem__quote finale-problem__quote--close" aria-hidden="true">"</div>
     <div class="container">
-      <p class="finale-problem__pre reveal">소상공인 시장에서<br>온라인 마케팅만큼 높은 수익률을 가진 산업은 많지 않습니다.</p>
-      <p class="finale-problem__body reveal">또한 지금도 수많은 소상공인이<br>온라인 마케팅을 사용하고 있습니다.</p>
-      <h2 class="finale-problem__headline reveal">
-        문제는<br>
-        <strong>이 시장을 제대로 운영하고 관리하는<br>광고대행사가 많지 않다는 것입니다.</strong>
+      <h2 class="finale-problem__question reveal">
+        수요는 폭발적인데,<br>
+        제대로 관리하는 대행사는<br>
+        <span class="text-point-orange">왜 이렇게 없을까?</span>
       </h2>
+      <div class="finale-problem__body-group reveal">
+        <p class="finale-problem__body">
+          소상공인 시장에서<br>
+          온라인 마케팅만큼 높은 수익률을 가진 산업은 많지 않습니다.
+        </p>
+        <p class="finale-problem__body">
+          또한 지금도 수많은 소상공인이<br>
+          온라인 마케팅을 사용하고 있습니다.
+        </p>
+        <p class="finale-problem__body">
+          하지만 이 시장을 제대로 운영하고 관리하는<br>
+          광고대행사가 많지 않다는 것이 현실입니다.
+        </p>
+      </div>
     </div>
   </section>
 
   <!-- Gradient Bridge -->
   <div class="finale-bridge"></div>
 
-  <!-- Solution Zone -->
+  <!-- Solution Zone — 240억 증명과 책임 -->
   <section class="section finale-solution">
     <div class="finale-solution__glow"></div>
     <div class="container">
       <p class="finale-solution__badge reveal">연 평균 매출</p>
-      <h2 class="finale-solution__amount reveal">240억</h2>
+      <h2 class="finale-solution__amount">240억</h2>
       <p class="finale-solution__desc reveal">
-        수년간 축적된 <strong>영업 교육 시스템</strong>을 기반으로<br>
-        경험이 없는 인원도 <strong>성공 가능성을 극대화한 광고대행사 창업 모델</strong>을 통해<br>
-        안정적인 사업 운영이 가능하도록 지원합니다.
+        수년간 축적된 <strong class="finale-highlight">업계 1위의 영업 교육 시스템</strong>을 기반으로<br>
+        경험이 없는 인원도 성공 가능성을 극대화한<br>
+        <strong class="finale-highlight">광고대행사 창업 모델</strong>을 통해 안정적인 사업 운영을 지원합니다.
+      </p>
+      <p class="finale-solution__pledge reveal">
+        <strong class="finale-highlight finale-highlight--warm">당신의 성공을 끝까지 책임지겠습니다.</strong>
       </p>
 
+      <!-- CTA Bridge → 폼으로 유도 -->
+      <div class="finale-cta-bridge reveal">
+        <p class="finale-cta-bridge__text">지금 바로 아래 문의를 통해<br>당신만의 성공 스토리를 시작하세요.</p>
+        <div class="finale-cta-bridge__arrow" aria-hidden="true">↓</div>
+      </div>
+
       <div class="finale-form reveal">
-        <h3 class="finale-form__title">지금 시작하세요</h3>
+        <h3 class="finale-form__title">무료 창업 상담</h3>
         <form class="finale-form__box" id="ctaForm" onsubmit="return false;">
           <div class="finale-form__row">
             <div class="finale-form__field">
