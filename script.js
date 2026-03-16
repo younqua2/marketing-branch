@@ -563,7 +563,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // ── Phase 3: 성장 그래프 솟구침 ──
       if (p3 > 0) {
-        const graphY = H * 0.92; // 그래프 바닥 = 캔버스 하단에서 약간 위
+        const graphY = H; // 그래프 바닥 = 캔버스 최하단
         const barWidth = W * 0.06;
         const growT = easeOutExpo(Math.min(p3 * 1.5, 1));
         // Phase 3 진입 시 서서히 나타남 (0~0.3초 동안 페이드인)

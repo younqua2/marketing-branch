@@ -760,31 +760,31 @@ h3 {
 
 /* 7가지 배경 이미지 및 그래디언트 오버레이 */
 .marquee__inner--1 {
-  background: linear-gradient(to top, rgba(13, 17, 38, 0.95), rgba(13, 17, 38, 0.5)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=500&q=80') center/cover;
+  background: linear-gradient(to top, rgba(13, 17, 38, 0.95), rgba(13, 17, 38, 0.5)), url('img/01.jpeg') center/cover;
 }
 
 .marquee__inner--2 {
-  background: linear-gradient(to top, rgba(13, 17, 38, 0.95), rgba(13, 17, 38, 0.5)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=500&q=80') center/cover;
+  background: linear-gradient(to top, rgba(13, 17, 38, 0.95), rgba(13, 17, 38, 0.5)), url('img/02.jpeg') center/cover;
 }
 
 .marquee__inner--3 {
-  background: linear-gradient(to top, rgba(13, 17, 38, 0.95), rgba(13, 17, 38, 0.5)), url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=500&q=80') center/cover;
+  background: linear-gradient(to top, rgba(13, 17, 38, 0.95), rgba(13, 17, 38, 0.5)), url('img/03.jpeg') center/cover;
 }
 
 .marquee__inner--4 {
-  background: linear-gradient(to top, rgba(13, 17, 38, 0.95), rgba(13, 17, 38, 0.5)), url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=500&q=80') center/cover;
+  background: linear-gradient(to top, rgba(13, 17, 38, 0.95), rgba(13, 17, 38, 0.5)), url('img/04.jpeg') center/cover;
 }
 
 .marquee__inner--5 {
-  background: linear-gradient(to top, rgba(13, 17, 38, 0.95), rgba(13, 17, 38, 0.5)), url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=500&q=80') center/cover;
+  background: linear-gradient(to top, rgba(13, 17, 38, 0.95), rgba(13, 17, 38, 0.5)), url('img/05.jpeg') center/cover;
 }
 
 .marquee__inner--6 {
-  background: linear-gradient(to top, rgba(13, 17, 38, 0.95), rgba(13, 17, 38, 0.5)), url('https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=500&q=80') center/cover;
+  background: linear-gradient(to top, rgba(13, 17, 38, 0.95), rgba(13, 17, 38, 0.5)), url('img/06.jpeg') center/cover;
 }
 
 .marquee__inner--7 {
-  background: linear-gradient(to top, rgba(13, 17, 38, 0.95), rgba(13, 17, 38, 0.5)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=500&q=80') center/cover;
+  background: linear-gradient(to top, rgba(13, 17, 38, 0.95), rgba(13, 17, 38, 0.5)), url('img/07.jpeg') center/cover;
 }
 
 @keyframes marquee-scroll {
