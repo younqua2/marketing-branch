@@ -19,9 +19,10 @@
     --hl-yellow: #ffe066;
     --hl-green: #b8e29a;
     --hl-pink: #f9c6cf;
-    --heart: #e4573d;
+    --heart: #c43e24;
     --tape: rgba(222, 214, 180, 0.8);
     --card-line: #dfe3e8;
+    --focus: #2b6cb0;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -52,6 +53,7 @@
     scroll-snap-type: y mandatory;
     overscroll-behavior-y: contain;
   }
+  .pager:focus-visible { outline: 3px solid var(--focus); outline-offset: -3px; }
 
   @media (prefers-reduced-motion: no-preference) {
     .pager { scroll-behavior: smooth; }
@@ -235,7 +237,7 @@
     background: rgba(255,255,255,0.65);
     border: 1px dashed var(--card-line);
   }
-  .toc a:active, .toc a:focus-visible { background: #fff; outline: 2px solid var(--hl-blue); }
+  .toc a:active, .toc a:focus-visible { background: #fff; outline: 3px solid var(--focus); outline-offset: 1px; }
   .toc .num { font-size: 4.7cqw; color: var(--ink-soft); min-width: 1.4em; }
 
   /* ===== 프로필 ===== */
@@ -593,12 +595,13 @@
 
   .to-top {
     display: inline-block;
-    margin-top: 5.4cqw;
+    margin-top: 4cqw;
+    padding: 1.4cqw 3cqw;
     font-size: 4.2cqw;
     color: var(--ink-soft);
     text-decoration: none;
   }
-  .to-top:focus-visible { outline: 2px solid var(--hl-blue); }
+  .to-top:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
 
   /* ===== A4 인쇄 ===== */
   @page { size: A4 portrait; margin: 0; }
@@ -631,7 +634,7 @@
   }
 </style>
 
-<div class="pager" id="pager">
+<div class="pager" id="pager" tabindex="0" aria-label="상견례 소개 슬라이드 (위아래로 넘기기)">
 
   <!-- 1. 표지 -->
   <section class="slide" id="top">
